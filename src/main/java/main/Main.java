@@ -29,7 +29,7 @@ public class Main {
         for (int i = 0; i < nThreads; i++) {
             double ai = a + i * delta;
             double bi = ai + delta;
-            new Thread(new IntegralCalculatorThread(ai, bi, n/nThreads, f, this)).start();
+            Thread.startVirtualThread(new IntegralCalculatorThread(ai, bi, n/nThreads, f, this));
         }
 
         try {
